@@ -1,4 +1,5 @@
 local opt = vim.opt
+local wo = vim.wo
 local g = vim.g
 local config = require("core.utils").load_config()
 
@@ -61,6 +62,10 @@ end
 -- add binaries installed by mason.nvim to path
 local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
 vim.env.PATH = vim.env.PATH .. (is_windows and ";" or ":") .. vim.fn.stdpath "data" .. "/mason/bin"
+
+
+----------------------------------- window options ---------------------------------------
+wo.relativenumber = true
 
 -------------------------------------- autocmds ------------------------------------------
 local autocmd = vim.api.nvim_create_autocmd
